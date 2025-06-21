@@ -1,84 +1,58 @@
-# Turborepo starter
+# EdgeSage
 
-This Turborepo starter is maintained by the Turborepo core team.
+**EdgeSage** is a cloud-native, event-driven user analytics and personalization platform. It enables websites and applications to track user behavior and serve dynamic, personalized experiences — all powered by edge computing and scalable architecture.
 
-## Using this example
+> Think of it as your own lightweight alternative to Google Analytics, tailored for modern, privacy-aware, and performance-critical environments.
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
-```
+## 🌐 Architecture Overview
 
-## What's inside?
+EdgeSage is built on a modular, microservice-inspired architecture and currently includes:
 
-This Turborepo includes the following packages/apps:
+- **TurboRepo** for monorepo management
+- **Next.js** for the frontend and admin dashboard
+- **Node.js (Express)** for backend services
+- **AWS Lambda + Kinesis** for scalable, serverless ingestion
+- **PostgreSQL + Redis** (planned) for data persistence and caching
 
-### Apps and Packages
+---
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## 📦 Modules
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- `apps/sdk` – Lightweight JavaScript SDK for integration
+- `apps/ingestion-api` – Receives user activity and pushes to event stream
+- `apps/config-api` – Serves dynamic config for personalization
+- `apps/admin-panel` – Dashboard to manage user accounts, keys, and analytics
 
-### Utilities
+---
 
-This Turborepo has some additional tools already setup for you:
+## 🚀 Goals
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Near real-time user event ingestion
+- Customization APIs to deliver tailored site behavior
+- Plug-and-play SDK for third-party sites
+- Scalable backend with future support for machine learning-based personalization
 
-### Build
+---
 
-To build all apps and packages, run the following command:
+## 📚 Tech Stack
 
-```
-cd my-turborepo
-pnpm build
-```
+| Area         | Tech         |
+|--------------|--------------|
+| Frontend     | Next.js      |
+| Backend APIs | Node.js + Express |
+| Monorepo     | TurboRepo    |
+| Event System | AWS Kinesis (planned) |
+| Infra as Code | Terraform (planned) |
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+## 🛠️ Getting Started
 
-```
-cd my-turborepo
-pnpm dev
-```
+1. Clone this repo
+2. Run `npm install` at the root
+3. Start individual apps using Turbo:
 
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+```bash
+npx turbo run dev
