@@ -36,3 +36,24 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# Ignore all .terraform directories anywhere
+**/.terraform/
+
+# Ignore all terraform state files anywhere
+**/*.tfstate
+**/*.tfstate.*
+
+# Ignore crash logs anywhere
+**/crash.log
+**/crash.*.log
+
+# Ignore override files anywhere
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
+
+# Ignore sensitive variable files anywhere
+**/*.tfvars
+**/*.tfvars.json
